@@ -732,7 +732,7 @@ config SND_SOC_WCD9335
 
 config SND_SOC_WCD934X
         tristate
-        default y
+        default n
 	select   SND_SOC_WCD934X_DSP_CNTL
 	select SND_SOC_WCD934X_DSD
 
@@ -752,7 +752,7 @@ config SND_SOC_WSA881X_ANALOG
 
 config SND_SOC_WCD9XXX
 	tristate
-	default y if SND_SOC_WCD9320=y || SND_SOC_WCD9330=y || SND_SOC_WCD9335=y || SND_SOC_WCD934x=y
+	default n if SND_SOC_WCD9320=y || SND_SOC_WCD9330=y || SND_SOC_WCD9335=y || SND_SOC_WCD934x=y
 
 config SND_SOC_WCD9XXX_V2
 	tristate
@@ -1015,12 +1015,6 @@ config SND_I2S_PRIMARY
 
 source "sound/soc/codecs/sdm660_cdc/Kconfig"
 source "sound/soc/codecs/msm_sdw/Kconfig"
-
-
-config SOUND_CONTROL
-
-	bool "Sound control for wcd934x"
-
 
 endmenu
 
