@@ -7,4 +7,4 @@ obj-$(CONFIG_SND_SOC_DBMDX) += snd-soc-dbmdx.o
 snd-soc-dbmdx-snd-capture-objs := dbmdx-snd.o dbmdx-snd-pcm.o
 obj-$(CONFIG_SND_SOC_DBMDX_SND_CAPTURE) += snd-soc-dbmdx-snd-capture.o
 # Hack
-obj-$(CONFIG_SOUND_CONTROL_HAX_GPL) += sound_control_gpl.o
+
