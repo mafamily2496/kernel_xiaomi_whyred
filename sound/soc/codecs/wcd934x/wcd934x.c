@@ -5250,10 +5250,7 @@ static int tavil_compander_put(struct snd_kcontrol *kcontrol,
 		    kcontrol->private_value)->shift;
 	int value = ucontrol->value.integer.value[0];
 
-#ifdef CONFIG_SOUND_CONTROL
-	if (comp == COMPANDER_1 || comp == COMPANDER_2)
-		value = 0;
-#endif
+
 
 	dev_dbg(codec->dev, "%s: Compander %d enable current %d, new %d\n",
 		 __func__, comp + 1, tavil->comp_enabled[comp], value);
@@ -5810,10 +5807,6 @@ static const struct snd_kcontrol_new tavil_snd_controls[] = {
 	SOC_ENUM_EXT("EAR SPKR PA Gain", tavil_ear_spkr_pa_gain_enum,
 		     tavil_ear_spkr_pa_gain_get, tavil_ear_spkr_pa_gain_put),
 
-#ifndef CONFIG_SOUND_CONTROL
-	SOC_SINGLE_TLV("HPHL Volume", WCD934X_HPH_L_EN, 0, 20, 1, line_gain),
-	SOC_SINGLE_TLV("HPHR Volume", WCD934X_HPH_R_EN, 0, 20, 1, line_gain),
-#endif CONFIG_SOUND_CONTROL
 	SOC_SINGLE_TLV("LINEOUT1 Volume", WCD934X_DIFF_LO_LO1_COMPANDER,
 		3, 16, 1, line_gain),
 	SOC_SINGLE_TLV("LINEOUT2 Volume", WCD934X_DIFF_LO_LO2_COMPANDER,
