@@ -23,4 +23,4 @@ export KBUILD_COMPILER_STRING=$(<path_to_clang_folder/bin/clang --version | head
 ## Found bugs?
 
 ###### Contact:
-Telegram: **@AxelBlaz3**
+Telegram: **@Kirkhan93**
