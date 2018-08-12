@@ -2012,9 +2012,22 @@ int tas2557_parse_dt(struct device *dev, struct tas2557_priv *pTAS2557)
 			"ti,bypass-tmax", np->full_name, rc);
 	else
 		pTAS2557->mbBypassTMax = (value > 0);
+			
+#ifdef CONFIG_SOUND_CONTROL
+ 	sound_control_kobj = 
+kobject_create_and_add("sound_control", kernel_kobj);
+ 	if (sound_control_kobj == NULL) {
+ 		pr_warn("%s kobject create failed!\n", __func__);
+         }
+
+ret = sysfs_create_group(sound_control_kobj, &sound_control_attr_group);
+         if (ret) {
+ 		pr_warn("%s sysfs file create failed!\n", __func__);
+ 	}
+
+#endif
 
 end:
-
 	return ret;
 }
 
