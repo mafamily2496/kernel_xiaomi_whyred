@@ -1838,7 +1838,10 @@ int ubi_wl_init(struct ubi_device *ubi, struct ubi_attach_info *ai)
 		err = erase_aeb(ubi, aeb, false);
 		if (err)
 			goto out_free;
+<<<<<<< HEAD
 
+=======
+>>>>>>> FETCH_HEAD
 
 		found_pebs++;
 	}
