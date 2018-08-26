@@ -24,7 +24,7 @@ ANYKERNEL_DIR=/home/kirkirehani93/AnyKernel2
 EXPORT_DIR=/home/kirkirehani93/flashablezips
 
 # Make Changes to this before release
-ZIP_NAME="Kirks-R1.9"
+ZIP_NAME="Kirks-R2.0-Unified"
 
 # Tweakable Options Below
 export ARCH=arm64
